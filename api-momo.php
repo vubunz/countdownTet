@@ -25,7 +25,7 @@ try {
     }
 
     // Thực hiện prepared statement
-    $sqlUs = 'SELECT username FROM player WHERE username = ? LIMIT 1';
+    $sqlUs = 'SELECT username FROM users WHERE username = ? LIMIT 1';
     $stmt = $conn->prepare($sqlUs);
     $stmt->bind_param('s', $username);
     $stmt->execute();

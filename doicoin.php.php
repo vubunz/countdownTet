@@ -32,7 +32,7 @@ ob_end_flush();
       <div class="modal-content">
          <span class="close" onclick="closeDoiluongThanhcong()">&times;</span>
          <div class="modal-body text-center">
-            <a href="/"><img class="logo" alt="Logo" src="/images/1.png" style="max-width: 150px;"></a>
+            <a href="/"><img class="logo" alt="Logo" src="/images/1.gif" style="max-width: 150px;"></a>
             <h2>Đổi lượng thành công</h2>
             <p id="doiluongThanhCongContent"></p>
             <button class="modal-close-btn" onclick="closeDoiluongThanhCong()">OK</button>
@@ -50,7 +50,7 @@ ob_end_flush();
       <div class="modal-content">
          <span class="close" onclick="closeDoiluongThatBai()">&times;</span>
          <div class="modal-body text-center">
-            <a href="/"><img class="logo" alt="Logo" src="/images/1.png" style="max-width: 150px;"></a>
+            <a href="/"><img class="logo" alt="Logo" src="/images/1.gif" style="max-width: 150px;"></a>
             <h2>Đổi lượng thất bại</h2>
             <p id="doiluongThatBaiContent"></p>
             <button class="modal-close-btn" onclick="closeDoiluongThatBai()">OK</button>
@@ -134,10 +134,10 @@ ob_end_flush();
                100000 => 300000,
                200000 => 600000,
                500000 => 1500000,
-               1000000 => 3000000,
-               2000000 => 6000000,
-               5000000 => 15000000,
-               10000000 => 30000000,
+               // 1000000 => 3000000,
+               // 2000000 => 6000000,
+               // 5000000 => 15000000,
+               // 10000000 => 30000000,
             );
 
             // Xử lý đổi Ecoin sang Lượng
@@ -288,7 +288,7 @@ ob_end_flush();
                      </div>
                   </div>
                </div>
-               <div>
+               <!-- <div>
                   <div class="col">
                      <div class="w-100 fw-semibold cursor-pointer" onclick="handleClick(1000000)">
                         <div id="button-1000000" class="recharge-method-item false false recharge-method-item" style="height: 90px;" data-value="1000000">
@@ -320,9 +320,9 @@ ob_end_flush();
                         </div>
                      </div>
                   </div>
-               </div>
+               </div> -->
                <div>
-                  <div class="col">
+                  <!-- <div class="col">
                      <div class="w-100 fw-semibold cursor-pointer" onclick="handleClick(5000000)">
                         <div id="button-5000000" class="recharge-method-item false false recharge-method-item" style="height: 90px;" data-value="5000000">
                            <div class="text-primary">10,000,000E</div>
@@ -330,7 +330,7 @@ ob_end_flush();
                            <div class="text-danger">30,000,000 lượng</div>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                   <!--    <input type="hidden" name="selected_amount" id="selected-amount-input" value="">-->
 
                   <input type="hidden" name="amount" id="selected-amount" required="">
@@ -358,7 +358,7 @@ ob_end_flush();
                      // Hiển thị giá trị luong
                      echo "<p>Có " . number_format($row['luong']) . " Lượng</p>";
                   } else {
-                     echo "Không có dữ liệu của thằng này";
+                     echo "Không có dữ liệu của người chơi";
                   }
 
                   ?></p>
@@ -383,7 +383,7 @@ ob_end_flush();
                   <div class="modal-content">
                      <div class="modal-body">
                         <div class="my-2">
-                           <div class="text-center"><a href="/"><img class="logo" alt="Logo" src="/images/1.png" style="max-width: 250px;"></a></div>
+                           <div class="text-center"><a href="/"><img class="logo" alt="Logo" src="/images/1.gif" style="max-width: 250px;"></a></div>
                         </div>
                         <div class="text-center fw-semibold">
                            <div id="noti" style="text-align: center;"></div>

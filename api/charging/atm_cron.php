@@ -7,7 +7,7 @@ $choose = $post['pcoin'];
 try {
     session_start();
     $user = $_SESSION['user'];
-    $sqlUs = 'SELECT username FROM player WHERE id=' . $user['id'] . ' LIMIT 1';
+    $sqlUs = 'SELECT username FROM users WHERE id=' . $user['id'] . ' LIMIT 1';
     $resultUs = SQL()->query($sqlUs);
     $userDB = $resultUs->fetch_assoc();
     $username = $userDB['username'];

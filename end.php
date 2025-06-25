@@ -1,8 +1,8 @@
-
-<div class="text-center my-2"><div class="age-rule">
-    <img src="/images/12.png" alt="Age Rule" height="12" style="filter: invert(100%);">
-    <span style="color: white;">Trò chơi dành cho người chơi 12 tuổi trở lên. Chơi quá 180 phút mỗi ngày sẽ có hại cho sức khỏe</span>
-</div>
+<div class="text-center my-2">
+    <div class="age-rule">
+        <img src="/images/12.png" alt="Age Rule" height="12" style="filter: invert(100%);">
+        <span style="color: black;">Trò chơi dành cho người chơi 12 tuổi trở lên. Chơi quá 180 phút mỗi ngày sẽ có hại cho sức khỏe</span>
+    </div>
 </div>
 </div>
 </div>
@@ -53,4 +53,5 @@ shortcut={all_shortcuts:{},add:function(a,b,c){var d={type:"keydown",propagate:!
 </script>-->
 
 </body>
+
 </html>

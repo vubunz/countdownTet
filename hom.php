@@ -48,13 +48,13 @@ if ($posts_result->num_rows > 0) {
                <div class="text-muted font-weight-bold">Shop đồ chất chuẩn dân chơi<span class="fb-comments-count" data-href="'.$item_url.'"></span></div>
          </div>
    </div> -->
-    <div class="post-item d-flex align-items-center my-2">
+    <!-- <div class="post-item d-flex align-items-center my-2">
         <div class="post-image"><img src="/images/avatar.png" alt="'.$item['title'].'"></div>
         <div>
             <a class="fw-bold false" href="item">Danh sách Item</a>
             <div class="text-muted font-weight-bold" style="color: #198754;">Đã đăng bởi: <span class="admin-highlight">admin</span></div>
         </div>
-    </div>
+    </div> -->
 
     <!-- <?php
             $query_categories = "SELECT * FROM news_posts1";

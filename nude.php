@@ -7,23 +7,34 @@
             <?php
             if (isset($_SESSION['username'])) {
                 // Nếu đã đăng nhập, chuyển hướng bình thường
-                echo '<div class="px-2"><a class="btn btn-menu btn-dangerxyz w-100 fw-semibold" href="/recharge" style="color: white;">Nạp tiền</a></div>';
+                echo '<div class="px-2"><a class="btn btn-menu btn-dangerxyz w-100 fw-semibold" href="/recharge" style="color: white;">Nạp LCoin</a></div>';
             } else {
                 // Nếu chưa đăng nhập, sử dụng modal
-                echo '<div class="px-2"><a class="btn btn-menu btn-dangerxyz w-100 fw-semibold" data-bs-toggle="modal" data-bs-target="#modalLogin" href="#" style="color: white;">Nạp tiền</a></div>';
+                echo '<div class="px-2"><a class="btn btn-menu btn-dangerxyz w-100 fw-semibold" data-bs-toggle="modal" data-bs-target="#modalLogin" href="#" style="color: white;">Nạp LCoin</a></div>';
             }
             ?>
         </div>
         <div class="col">
             <!-- Đổi lượng -->
-            <!-- <?php
-                    if (isset($_SESSION['username'])) {
-                        echo '<div class="px-2"><a class="btn btn-menu btn-dangerxyz w-100 fw-semibold" href="/doicoin" style="color: white;">Đổi lượng</a></div>';
-                    } else {
-                        echo '<div class="px-2"><a class="btn btn-menu btn-dangerxyz w-100 fw-semibold" data-bs-toggle="modal" data-bs-target="#modalLogin" href="#" style="color: white;">Đổi lượng</a></div>';
-                    }
-                    ?> 
-                    -->
+            <?php
+            if (isset($_SESSION['username'])) {
+                echo '<div class="px-2"><a class="btn btn-menu btn-dangerxyz w-100 fw-semibold" href="/doicoin" style="color: white;">Đổi lượng</a></div>';
+            } else {
+                echo '<div class="px-2"><a class="btn btn-menu btn-dangerxyz w-100 fw-semibold" data-bs-toggle="modal" data-bs-target="#modalLogin" href="#" style="color: white;">Đổi lượng</a></div>';
+            }
+            ?>
+        </div>
+        <div class="col">
+            <!-- Đổi xu -->
+            <?php
+            if (isset($_SESSION['username'])) {
+                echo '<div class="px-2"><a class="btn btn-menu btn-dangerxyz w-100 fw-semibold" href="/doixu" style="color: white;">Đổi xu</a></div>';
+            } else {
+                echo '<div class="px-2"><a class="btn btn-menu btn-dangerxyz w-100 fw-semibold" data-bs-toggle="modal" data-bs-target="#modalLogin" href="#" style="color: white;">Đổi xu</a></div>';
+            }
+            ?>
+        </div>
+        <div class="col">
             <!-- BXH -->
             <?php
             if (isset($_SESSION['username'])) {

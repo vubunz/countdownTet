@@ -15,6 +15,7 @@ RewriteRule ^(.*)$ /404 [L]
 Options -Indexes
 
 
+
 RewriteRule ^api/atm /api/charging/atm_pay.php [L]
 
 RewriteRule ^atm /api/charging/atm_pay.php [L]

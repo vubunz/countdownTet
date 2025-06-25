@@ -43,22 +43,22 @@ $list_recharge_price_momo = [
         "amount" => 500000,
         "bonus" => 0
     ],
-    [
-        "amount" => 1000000,
-        "bonus" => 2
-    ],
-    [
-        "amount" => 2000000,
-        "bonus" => 2
-    ],
-    [
-        "amount" => 5000000,
-        "bonus" => 3
-    ],
-    [
-        "amount" => 10000000,
-        "bonus" => 5
-    ],
+    // [
+    //     "amount" => 1000000,
+    //     "bonus" => 2
+    // ],
+    // [
+    //     "amount" => 2000000,
+    //     "bonus" => 2
+    // ],
+    // [
+    //     "amount" => 5000000,
+    //     "bonus" => 3
+    // ],
+    // [
+    //     "amount" => 10000000,
+    //     "bonus" => 5
+    // ],
 ];
 
 $configNapTien = [
@@ -70,8 +70,8 @@ $configNapTien = [
         'matkhau' => 'xxx' //Mật khẩu ngân hàng của bạn
     ],
     'momo' => [
-        'chutaikhoan' => '',
-        'sotaikhoan' => '',
+        'chutaikhoan' => 'HO LONG VU',
+        'sotaikhoan' => '0946817429',
         'apikey' => '',
     ],
     'zalo' => [

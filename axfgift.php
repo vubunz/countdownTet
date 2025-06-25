@@ -259,7 +259,7 @@ ob_end_flush();
         <div class="modal-content">
             <span class="close" onclick="closeActiveThatBai6()">&times;</span>
             <div class="modal-body text-center">
-                <a href="/"><img class="logo" alt="Logo" src="/images/1.png" style="max-width: 250px;"></a>
+                <a href="/"><img class="logo" alt="Logo" src="/images/1.gif" style="max-width: 250px;"></a>
                 <h2 style="color: #E83F33;">Thất Bại</h2>
                 <p id="activeThatBaiContent6"></p>
                 <button class="modal-close-btn" onclick="closeActiveThatBai6()">OK</button>

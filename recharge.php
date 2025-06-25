@@ -10,7 +10,7 @@ if (!isset($_SESSION['username'])) {
 ?>
 <div class="card">
    <div class="card-body">
-      <div class="d-inline d-sm-flex justify-content-center">
+      <!-- <div class="d-inline d-sm-flex justify-content-center">
          <div class="col-md-8 mb-5 mb-sm-4">
             <div class="d-flex align-items-center justify-content-between"><a href="/ranking"><small class="fw-semibold">Xem ưu đãi</small></a><small class="fw-semibold">Tích lũy: 0</small></div>
             <div class="recharge-progress">
@@ -57,7 +57,7 @@ if (!isset($_SESSION['username'])) {
                </div>
             </div>
          </div>
-      </div>
+      </div> -->
       <div>
          <div class="fs-5 fw-semibold text-center">Chọn hình thức nạp</div>
          <div class="row text-center justify-content-center row-cols-2 row-cols-lg-5 g-2 g-lg-2 my-1 mb-2">
@@ -73,5 +73,6 @@ if (!isset($_SESSION['username'])) {
 
       ?>
    </div>
+
 </div>
 <?php include_once './end.php'; ?>

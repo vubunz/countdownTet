@@ -23,7 +23,7 @@ if (!isset($_SESSION['username'])) {
                            <div class="recharge-method-item position-relative false" style="height: 90px;">
                               <div>' . number_format($item['amount']) . ' đ</div>
                               <div class="center-text text-danger"><span>Nhận</span></div>
-                              <div class="text-primary">' . number_format($item['amount'] + ($item['amount'] * $item['bonus'] / 100)) . ' P </div>
+                              <div class="text-primary">' . number_format($item['amount'] + ($item['amount'] * $item['bonus'] / 100)) . ' LCoin </div>
                               <span class="text-white position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="z-index: 1;">+' . $item['bonus'] . '%</span>
                            </div>
                         </div>
@@ -36,7 +36,7 @@ if (!isset($_SESSION['username'])) {
                            <div class="recharge-method-item position-relative false" style="height: 90px;">
                               <div>' . number_format($item['amount']) . ' đ</div>
                               <div class="center-text text-danger"><span>Nhận</span></div>
-                              <div class="text-primary">' . number_format($item['amount']) . ' P </div>
+                              <div class="text-primary">' . number_format($item['amount']) . ' LCoin </div>
                            </div>
                         </div>
                      </div>
@@ -52,6 +52,12 @@ if (!isset($_SESSION['username'])) {
             <div class="mt-2"><small class="fw-semibold"><a href="./lich-su">Lịch sử giao dịch</a></small></div>
          </div>
          <div class="mt-4"><small class="fw-semibold">Lưu ý khi thanh toán: Giao dịch trên hoàn toàn được kiểm duyệt tự động, Yêu cầu kiểm tra kỹ nội dung chuyển tiền trước khi thực hiện chuyển. Nếu ghi thiếu, sai hoặc quá 10 phút không thấy cộng tiền, các bạn hãy liên hệ với <a target="_blank" href="https://zalo.me/<?php echo $configNapTien['momo']['sotaikhoan']; ?>" rel="noreferrer">Admin</a> để được hỗ trợ</small></div>
+         <div class="mt-4">
+            <small class="fw-semibold">
+               Việc <strong>ủng hộ (donate)</strong> để nhận coin là <strong>hoàn toàn tự nguyện</strong>, không phải hình thức mua bán hay trao đổi dịch vụ. Nghiêm cấm mọi hành vi vi phạm pháp luật như rửa tiền, gian lận,... Nếu phát sinh sự cố, vui lòng liên hệ <a target="_blank" href="https://zalo.me/<?php echo $configNapTien['momo']['sotaikhoan']; ?>" rel="noreferrer">Admin</a> để được hỗ trợ kịp thời.
+            </small>
+         </div>
+
       </div>
    </div>
 </div>
@@ -76,7 +82,7 @@ if (!isset($_SESSION['username'])) {
       var btnConfirmPaymentMomo = $("button#confirm_payment_momo");
       var spanCountdown = $("button#confirm_payment_momo span#count");
       var infoPaymentMomo = $("div#momo_info");
-      var counter = 60;
+      var counter = 600;
       btnPaymentMomo.click(() => {
          $("#NotiflixLoadingWrap").removeClass('hide');
          var err = $("div.momo-btn div#error").first()
@@ -129,7 +135,7 @@ if (!isset($_SESSION['username'])) {
 
                   btnPaymentMomo.addClass("hide");
                   btnConfirmPaymentMomo.removeClass("hide");
-                  counter = 60;
+                  counter = 600;
                   setInterval(function() {
                      counter--;
                      if (counter >= 0) {
@@ -159,7 +165,7 @@ if (!isset($_SESSION['username'])) {
       btnConfirmPaymentMomo.click(() => {
          $("#NotiflixLoadingWrap").removeClass('hide');
          $.ajax({
-            url: "./atm_pay.php",
+            url: "./sepay_callback/api_transactions.php",
             type: "POST",
             dataType: "json",
             data: JSON.stringify({
@@ -171,12 +177,18 @@ if (!isset($_SESSION['username'])) {
                btnConfirmPaymentMomo.addClass("hide");
                clearInterval(counter);
                $("#NotiflixLoadingWrap").addClass('hide');
+               if (data.success) {
+                  alert("Nạp tiền thành công!");
+               } else {
+                  alert(data.message || "Không tìm thấy giao dịch phù hợp. Vui lòng thử lại sau vài phút.");
+               }
             },
             error: function(xhr, textStatus, errorThrown) {
                $("div#momo_info").empty();
                btnPaymentMomo.removeClass("hide");
                btnConfirmPaymentMomo.addClass("hide");
                $("#NotiflixLoadingWrap").addClass('hide');
+               alert("Có lỗi xảy ra, vui lòng thử lại.");
             },
          });
       })

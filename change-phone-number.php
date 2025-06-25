@@ -96,7 +96,7 @@ ob_end_flush();
         <div class="modal-content">
             <span class="close" onclick="closeDoiluong9Thanhcong9()">&times;</span>
             <div class="modal-body text-center">
-                <a href="/"><img class="logo" alt="Logo" src="/images/1.png" style="max-width: 150px;"></a>
+                <a href="/"><img class="logo" alt="Logo" src="/images/1.gif" style="max-width: 150px;"></a>
                 <h2>Đổi số điện thoại thành công</h2>
                 <p id="doiluong9ThanhCong9Content"></p>
                 <button class="modal-close-btn" onclick="closeDoiluong9ThanhCong9()">OK</button>
@@ -114,7 +114,7 @@ ob_end_flush();
         <div class="modal-content">
             <span class="close" onclick="closeDoiluong9ThatBai9()">&times;</span>
             <div class="modal-body text-center">
-                <a href="/"><img class="logo" alt="Logo" src="/images/1.png" style="max-width: 150px;"></a>
+                <a href="/"><img class="logo" alt="Logo" src="/images/1.gif" style="max-width: 150px;"></a>
                 <h2>Thất bại</h2>
                 <p id="doiluong9ThatBai9Content"></p>
                 <button class="btn btn-danger btn-lg" onclick="closeDoiluong9ThatBai9()">OK</button>

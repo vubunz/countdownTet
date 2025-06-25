@@ -3,7 +3,7 @@
     <div class="modal-content">
       <div class="modal-body">
         <div class="my-2">
-          <div class="text-center"><a href="/"><img class="logo" alt="Logo" src="images/1.png" style="max-width: 200px;"></a></div>
+          <div class="text-center"><a href="/"><img class="logo" alt="Logo" src="images/1.gif" style="max-width: 200px;"></a></div>
         </div>
         <form action="#" method="post" class="py-3 mx-3 needs-validation" id="register">
           <div class="mb-2">

@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-body">
                 <div class="my-2">
-                    <div class="text-center"><a href="/"><img class="logo" alt="Logo" src="/images/1.png" style="max-width: 345px;"></a></div>
+                    <div class="text-center"><a href="/"><img class="logo" alt="Logo" src="/images/1.gif" style="max-width: 345px;"></a></div>
                 </div>
                 <div class="text-center fw-semibold">
                     <div class="fs-6 mb-2">Xác nhận kích hoạt tài khoản</div>
@@ -18,14 +18,14 @@
 </div>
 
 <script>
-    (function () {
+    (function() {
         'use strict'
         var btnActive = $("button#active");
         btnActive.click(() => {
             // Remove this line if you don't have an element with ID 'error'
             var err = $("div#error").first();
             if (err) err.remove();
-            
+
             event.preventDefault();
             event.stopPropagation();
             $("#NotiflixLoadingWrap").removeClass('hide');
@@ -34,7 +34,7 @@
                 type: 'POST',
                 dataType: 'json',
                 data: JSON.stringify({}),
-                success: function (data, textStatus, xhr) {
+                success: function(data, textStatus, xhr) {
                     $("#NotiflixLoadingWrap").addClass('hide');
                     if (data.code == "01") {
                         let alertErr = '<div class="alert alert-danger" id="error">Thông tin không chính xác.</div>';
@@ -57,7 +57,7 @@
                         }, 3000);
                     }
                 },
-                error: function (xhr, textStatus, errorThrown) {
+                error: function(xhr, textStatus, errorThrown) {
                     $("#NotiflixLoadingWrap").addClass('hide');
                     console.log('Error in Operation');
                 }

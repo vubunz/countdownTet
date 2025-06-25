@@ -9,14 +9,14 @@
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
-    <!--<link rel="icon" href="/../images/1.png" type="image/x-icon">--?
+    <!--<link rel="icon" href="/../images/1.gif" type="image/x-icon">--?
            Favicon and Touch Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/../images/1.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/../images/1.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/../images/1.png">
-    <link rel="shortcut icon" href="/../images/1.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/../images/1.gif">
+    <link rel="icon" type="image/png" sizes="32x32" href="/../images/1.gif">
+    <link rel="icon" type="image/png" sizes="16x16" href="/../images/1.gif">
+    <link rel="shortcut icon" href="/../images/1.gif">
     <meta name="description" content="NinjaLegacy Ký Ức Tuổi Thơ">
-    <meta property="og:image" content="/../images/1.png">
+    <meta property="og:image" content="/../images/1.gif">
     <meta property="og:image:width" content="800">
     <meta property="og:image:height" content="600">
     <!-- <script async defer crossorigin="anonymous" src="//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v17.0" nonce="tQcugFbH"></script> -->
@@ -42,7 +42,7 @@ session_start();
                     <div class="card-body">
                         <div class="">
                             <a href="/">
-                                <img class="logo" alt="Logo" src="/images/1.png" style="max-width: 220px;">
+                                <img class="logo" alt="Logo" src="/images/1.gif" style="max-width: 220px;">
                             </a>
                         </div>
                         <div class="mt-3">
@@ -119,7 +119,7 @@ session_start();
                         <div class="modal-content">
                             <div class="modal-body">
                                 <div class="my-2">
-                                    <div class="text-center"><a href="/"><img class="logo" alt="Logo" src="/images/1.png" style="max-width: 250px;"></a></div>
+                                    <div class="text-center"><a href="/"><img class="logo" alt="Logo" src="/images/1.gif" style="max-width: 250px;"></a></div>
                                 </div>
                                 <div class="text-center fw-semibold">
                                     <div id="noti" style="text-align: center;"></div>
