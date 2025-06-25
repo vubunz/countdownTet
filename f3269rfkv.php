@@ -14,7 +14,7 @@ function checkAdmin($conn, $username)
 
     if ($num_rows > 0) {
         $row = mysqli_fetch_array($query);
-        if ($row['role'] == 8763 && in_array($row['username'], ['admin'])) {
+        if ($row['role'] == 1 && in_array($row['username'], ['admin'])) {
             return true;
         }
     }
