@@ -19,7 +19,16 @@ if (!isset($_SESSION['username'])) {
                <td>Tài khoản</td>
                <td><?php echo $row['username'] ?></td>
             </tr>
-
+            <tr class="fw-semibold">
+               <td>Avatar</td>
+               <td>
+                  <form id="avatarForm" enctype="multipart/form-data">
+                     <input type="file" name="avatar" accept="image/png, image/jpeg, image/jpg, image/gif" required>
+                     <button type="submit">Cập nhật avatar</button>
+                  </form>
+                  <div id="avatarMsg"></div>
+               </td>
+            </tr>
             <tr class="fw-semibold">
                <td>Mật khẩu</td>
                <td>*** (<a class="cursor-pointer text-primary" href="/change-password">Đổi mật khẩu</a>)</td>
@@ -71,5 +80,23 @@ if (!isset($_SESSION['username'])) {
       </table>
    </div>
 </div>
+
+<script>
+   document.getElementById('avatarForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var formData = new FormData(this);
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'upload_avatar.php', true);
+      xhr.onload = function() {
+         document.getElementById('avatarMsg').innerHTML = xhr.responseText;
+         if (xhr.responseText.toLowerCase().includes('thành công')) {
+            setTimeout(function() {
+               location.reload();
+            }, 1200); // Reload sau 1.2 giây
+         }
+      };
+      xhr.send(formData);
+   });
+</script>
 
 <?php include_once './end.php'; ?>

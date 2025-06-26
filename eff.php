@@ -1,3 +1,18 @@
+<?php
+ob_start();
+
+include_once './main.php';
+include_once './f3269rfkv.php';
+
+// Kiểm tra nếu người dùng chưa đăng nhập thì chuyển hướng về trang chủ
+if (!isset($_SESSION['username'])) {
+    header('Location: /');
+}
+if (!checkAdmin($conn, $_SESSION['username'])) {
+    header('Location: /');
+}
+ob_end_flush();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,17 +93,17 @@
         var updateCounter = 0;
         var zoomLevel = 1;
 
-        document.getElementById('imageInput').addEventListener('change', function (event) {
+        document.getElementById('imageInput').addEventListener('change', function(event) {
             var input = event.target;
 
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
 
-                reader.onload = function (e) {
+                reader.onload = function(e) {
                     var image = new Image();
                     image.src = e.target.result;
 
-                    image.onload = function () {
+                    image.onload = function() {
                         var imageCanvas = document.getElementById('imageCanvas');
                         var ctx = imageCanvas.getContext('2d');
                         var hiddenCanvas = document.createElement('canvas');
@@ -113,7 +128,7 @@
                         var isDrawing = false;
 
                         // Bắt đầu vẽ khi chuột được nhấn
-                        imageCanvas.addEventListener('mousedown', function (e) {
+                        imageCanvas.addEventListener('mousedown', function(e) {
                             isDrawing = true;
                             var rect = imageCanvas.getBoundingClientRect();
                             startX = (e.clientX - rect.left) / zoomLevel;
@@ -121,7 +136,7 @@
                         });
 
                         // Kết thúc vẽ khi chuột được nhả
-                        imageCanvas.addEventListener('mouseup', function (e) {
+                        imageCanvas.addEventListener('mouseup', function(e) {
                             isDrawing = false;
                             var rect = imageCanvas.getBoundingClientRect();
                             endX = (e.clientX - rect.left) / zoomLevel;
@@ -130,7 +145,7 @@
                             // Vẽ hình chữ nhật
                             ctx.strokeStyle = '#000';
                             ctx.setLineDash([1, 2]); // Thiết lập mẫu đường đứt nhỏ
-                            ctx.lineWidth = 0.5;      // Đặt độ rộng đường về 0.5 để có đường đậm hơn
+                            ctx.lineWidth = 0.5; // Đặt độ rộng đường về 0.5 để có đường đậm hơn
                             ctx.strokeRect(startX, startY, endX - startX, endY - startY);
 
                             // Hiển thị thông tin
@@ -138,7 +153,7 @@
                         });
 
                         // Vẽ khi di chuyển chuột
-                        imageCanvas.addEventListener('mousemove', function (e) {
+                        imageCanvas.addEventListener('mousemove', function(e) {
                             if (!isDrawing) return;
 
                             var rect = imageCanvas.getBoundingClientRect();
@@ -160,7 +175,7 @@
                                 // Vẽ khung vùng chọn mới
                                 ctx.strokeStyle = '#000';
                                 ctx.setLineDash([1, 2]); // Thiết lập mẫu đường đứt nhỏ
-                                ctx.lineWidth = 0.5;      // Đặt độ rộng đường về 0.5 để có đường đậm hơn
+                                ctx.lineWidth = 0.5; // Đặt độ rộng đường về 0.5 để có đường đậm hơn
                                 ctx.strokeRect(startX, startY, endX - startX, endY - startY);
 
                                 // Hiển thị thông tin
@@ -205,7 +220,7 @@
             var frameUl = document.getElementById('frameUl');
             frameUl.innerHTML = '';
 
-            frameList.forEach(function (frame) {
+            frameList.forEach(function(frame) {
                 var frameLi = document.createElement('li');
                 frameLi.textContent = JSON.stringify(frame);
                 frameUl.appendChild(frameLi);
@@ -214,7 +229,7 @@
                 var ctx = imageCanvas.getContext('2d');
                 ctx.strokeStyle = '#000';
                 ctx.setLineDash([1, 2]); // Thiết lập mẫu đường đứt nhỏ
-                ctx.lineWidth = 0.5;      // Đặt độ rộng đường về 0.5 để có đường đậm hơn
+                ctx.lineWidth = 0.5; // Đặt độ rộng đường về 0.5 để có đường đậm hơn
                 ctx.strokeRect(frame.x * zoomLevel, frame.y * zoomLevel, frame.w * zoomLevel, frame.h * zoomLevel);
             });
         }

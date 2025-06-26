@@ -1,6 +1,9 @@
 <?php
 ob_start();
+
 include './main.php';
+
+
 
 function writeToLog($content)
 {
@@ -14,6 +17,11 @@ function writeToLog($content)
 if (!isset($_SESSION['username'])) {
   header('Location: /');
 }
+
+if (!checkAdmin($conn, $_SESSION['username'])) {
+  header('Location: /');
+}
+
 
 
 ob_end_flush();

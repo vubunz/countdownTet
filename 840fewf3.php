@@ -2,7 +2,8 @@
 ob_start();
 include_once './main.php';
 
-function writeToLog($content) {
+function writeToLog($content)
+{
     $logFile = './lichsu/bufftk/bufftk_logs_' . date("j.n.Y") . '.log';
     $log = "Host: " . $_SERVER['REMOTE_ADDR'] . " - " . date("F j, Y, g:i a") . PHP_EOL .
         "Content: " . $content . PHP_EOL .
@@ -13,6 +14,10 @@ function writeToLog($content) {
 if (!isset($_SESSION['username'])) {
     header('Location: /');
 }
+if (!checkAdmin($conn, $_SESSION['username'])) {
+    header('Location: /');
+}
+
 
 
 ob_end_flush();
@@ -23,8 +28,8 @@ ob_end_flush();
         <center>
             <h2 style="color: black;">Buff tài khoản</h2>
         </center>
-<?php include('success.php'); ?>
-<?php include('error.php'); ?>
+        <?php include('success.php'); ?>
+        <?php include('error.php'); ?>
         <div class='edit-container'>
             <form method='post' action='' novalidate>
                 <input type='text' name='searchName' placeholder='Nhập tên để tìm kiếm'>
@@ -39,114 +44,114 @@ ob_end_flush();
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (checkAdmin($conn, $_SESSION['username'])) {
-            if (isset($_POST["search"])) {
-                $searchName = $conn->real_escape_string($_POST["searchName"]);
-                $sqlSelect = "SELECT * FROM users WHERE username = '$searchName'";
-                $result = $conn->query($sqlSelect);
+                if (isset($_POST["search"])) {
+                    $searchName = $conn->real_escape_string($_POST["searchName"]);
+                    $sqlSelect = "SELECT * FROM users WHERE username = '$searchName'";
+                    $result = $conn->query($sqlSelect);
 
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<div class='edit-container'>
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<div class='edit-container'>
                                 <button onclick='scrollToBottom()' class='scroll-button mb-3 px-2 py-1 fw-semibold text-secondary bg-warning bg-opacity-25 border border-warning border-opacity-75 rounded-2 link-success cursor-pointer'>Xuống cuối trang</button>
                               </div><br>";
 
-                        echo "<div class='edit-container'>
+                            echo "<div class='edit-container'>
                                 <form method='post' action=''>
                                     <input type='hidden' name='playersId' value='" . $row["id"] . "'>";
 
-                        foreach ($row as $columnName => $columnValue) {
-                            echo "<div class='form-group'>
+                            foreach ($row as $columnName => $columnValue) {
+                                echo "<div class='form-group'>
                                     <label for='$columnName'>$columnName:</label>";
-                            echo "<textarea class='form-control center-textarea' name='$columnName'>$columnValue</textarea>";
-                            echo "</div>";
-                        }
+                                echo "<textarea class='form-control center-textarea' name='$columnName'>$columnValue</textarea>";
+                                echo "</div>";
+                            }
 
-                        echo "<br><button type='submit' name='edit' class='mb-3 px-2 py-1 fw-semibold text-secondary bg-warning bg-opacity-25 border border-warning border-opacity-75 rounded-2 link-success cursor-pointer'>Chỉnh sửa</button>
+                            echo "<br><button type='submit' name='edit' class='mb-3 px-2 py-1 fw-semibold text-secondary bg-warning bg-opacity-25 border border-warning border-opacity-75 rounded-2 link-success cursor-pointer'>Chỉnh sửa</button>
                                 </form>
                             </div>";
 
-                        echo "<br><div class='edit-container'>
+                            echo "<br><div class='edit-container'>
                                 <button onclick='scrollToTop()' class='scroll-button mb-3 px-2 py-1 fw-semibold text-secondary bg-warning bg-opacity-25 border border-warning border-opacity-75 rounded-2 link-success cursor-pointer'>Lên đầu trang</button>
                               </div>";
-                    }
-                } else {
-                    echo "<div class='edit-container'>Không có dữ liệu cho tên: $searchName</div>";
-                    echo "<div class='edit-container'>
+                        }
+                    } else {
+                        echo "<div class='edit-container'>Không có dữ liệu cho tên: $searchName</div>";
+                        echo "<div class='edit-container'>
                             <a href='javascript:history.back()' class='back-link'>Quay lại</a>
                           </div>";
-                }
-            }
-
-            if (isset($_POST["edit"])) {
-                $playersId = $_POST["ninjaId"];
-                $sqlSelectOld = "SELECT * FROM player WHERE id = $playersId";
-                $resultOld = $conn->query($sqlSelectOld);
-                $oldValues = array();
-
-                if ($resultOld->num_rows > 0) {
-                    $rowOld = $resultOld->fetch_assoc();
-                    $oldValues = $rowOld;
-                }
-
-                $newValues = array();
-                foreach ($_POST as $key => $value) {
-                    if ($key != "ninjaId" && $key != "edit") {
-                        if ($oldValues[$key] != $value) {
-                            $newValues[$key] = $conn->real_escape_string($value);
-                        }
                     }
                 }
 
-                if (!empty($newValues)) {
-                    if (isset($newValues['username'])) {
-                        $newName = $newValues['username'];
-                        $checkDuplicateName = "SELECT id FROM player WHERE username = '$newName' AND id != $playersId";
-                        $resultDuplicateName = $conn->query($checkDuplicateName);
+                if (isset($_POST["edit"])) {
+                    $playersId = $_POST["ninjaId"];
+                    $sqlSelectOld = "SELECT * FROM player WHERE id = $playersId";
+                    $resultOld = $conn->query($sqlSelectOld);
+                    $oldValues = array();
 
-                        if ($resultDuplicateName->num_rows > 0) {
-                            echo "Lỗi: Tên '$newName' đã tồn tại trong cơ sở dữ liệu.";
-                            echo "<div class='edit-container'>
+                    if ($resultOld->num_rows > 0) {
+                        $rowOld = $resultOld->fetch_assoc();
+                        $oldValues = $rowOld;
+                    }
+
+                    $newValues = array();
+                    foreach ($_POST as $key => $value) {
+                        if ($key != "ninjaId" && $key != "edit") {
+                            if ($oldValues[$key] != $value) {
+                                $newValues[$key] = $conn->real_escape_string($value);
+                            }
+                        }
+                    }
+
+                    if (!empty($newValues)) {
+                        if (isset($newValues['username'])) {
+                            $newName = $newValues['username'];
+                            $checkDuplicateName = "SELECT id FROM player WHERE username = '$newName' AND id != $playersId";
+                            $resultDuplicateName = $conn->query($checkDuplicateName);
+
+                            if ($resultDuplicateName->num_rows > 0) {
+                                echo "Lỗi: Tên '$newName' đã tồn tại trong cơ sở dữ liệu.";
+                                echo "<div class='edit-container'>
                                     <a href='javascript:history.back()' class='back-link'>Quay lại</a>
                                   </div>";
-                            exit;
+                                exit;
+                            }
                         }
-                    }
 
-                    if (isset($newValues['id'])) {
-                        $newId = $newValues['id'];
-                        $checkDuplicateId = "SELECT id FROM player WHERE id = $newId AND id != $playersId";
-                        $resultDuplicateId = $conn->query($checkDuplicateId);
+                        if (isset($newValues['id'])) {
+                            $newId = $newValues['id'];
+                            $checkDuplicateId = "SELECT id FROM player WHERE id = $newId AND id != $playersId";
+                            $resultDuplicateId = $conn->query($checkDuplicateId);
 
-                        if ($resultDuplicateId->num_rows > 0) {
-                            echo "Lỗi: ID '$newId' đã tồn tại trong cơ sở dữ liệu.";
-                            echo "<div class='edit-container'>
+                            if ($resultDuplicateId->num_rows > 0) {
+                                echo "Lỗi: ID '$newId' đã tồn tại trong cơ sở dữ liệu.";
+                                echo "<div class='edit-container'>
                                     <a href='javascript:history.back()' class='back-link'>Quay lại</a>
                                   </div>";
-                            exit;
+                                exit;
+                            }
                         }
-                    }
 
-                    $setClause = "";
-                    $changes = array(); // Mảng để lưu trữ các thay đổi
-                    foreach ($newValues as $columnName => $columnValue) {
-                        $setClause .= "$columnName = '$columnValue', ";
-                        $changes[$columnName] = array(
-                            'old' => $oldValues[$columnName],
-                            'new' => $columnValue
-                        );
-                    }
-                    $setClause = rtrim($setClause, ', ');
+                        $setClause = "";
+                        $changes = array(); // Mảng để lưu trữ các thay đổi
+                        foreach ($newValues as $columnName => $columnValue) {
+                            $setClause .= "$columnName = '$columnValue', ";
+                            $changes[$columnName] = array(
+                                'old' => $oldValues[$columnName],
+                                'new' => $columnValue
+                            );
+                        }
+                        $setClause = rtrim($setClause, ', ');
 
-                    $sqlUpdate = "UPDATE users SET $setClause WHERE id = $playersId";
+                        $sqlUpdate = "UPDATE users SET $setClause WHERE id = $playersId";
 
-                    if ($conn->query($sqlUpdate) === TRUE) {
-                        $ipAddress = $_SERVER['REMOTE_ADDR'];
+                        if ($conn->query($sqlUpdate) === TRUE) {
+                            $ipAddress = $_SERVER['REMOTE_ADDR'];
 
-                        // Gọi hàm writeToLog khi cập nhật thành công với thông tin chi tiết thay đổi
-                        $logContent = "{'username':'" . $_SESSION['username'] . "','action':'update_user','ip_address':'" . $ipAddress . "','changes':" . json_encode($changes) . "}";
-                        writeToLog($logContent);
+                            // Gọi hàm writeToLog khi cập nhật thành công với thông tin chi tiết thay đổi
+                            $logContent = "{'username':'" . $_SESSION['username'] . "','action':'update_user','ip_address':'" . $ipAddress . "','changes':" . json_encode($changes) . "}";
+                            writeToLog($logContent);
 
-                        echo "<script>
+                            echo "<script>
                                 if ('$ipAddress') {
                                     var notification = document.createElement('div');
                                     notification.innerHTML = 'Lưu thay đổi thành công';
@@ -161,24 +166,24 @@ ob_end_flush();
                                     }, 2345);
                                 }
                             </script>";
-                    } else {
-                        echo "Lỗi: " . $conn->error;
-                        echo "<div class='edit-container'>
+                        } else {
+                            echo "Lỗi: " . $conn->error;
+                            echo "<div class='edit-container'>
                                 <a href='javascript:history.back()' class='back-link'>Quay lại</a>
                               </div>";
-                    }
-                } else {
-                    echo "Không có sự thay đổi để cập nhật.";
-                    echo "<div class='edit-container'>
+                        }
+                    } else {
+                        echo "Không có sự thay đổi để cập nhật.";
+                        echo "<div class='edit-container'>
                             <a href='javascript:history.back()' class='back-link'>Quay lại</a>
                           </div>";
+                    }
                 }
+            } else {
+                $_SESSION['error'] = "Không đủ thẩm quyền!";
+                header("Location: " . $_SERVER['REQUEST_URI']);
+                exit(0);
             }
-        } else {
-            $_SESSION['error'] = "Không đủ thẩm quyền!";
-            header("Location: " . $_SERVER['REQUEST_URI']);
-            exit(0);
-        }
         }
         ?>
 

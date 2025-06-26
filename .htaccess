@@ -1,23 +1,23 @@
- RewriteEngine on
-RewriteRule ^/ /index.php [L]
+RewriteEngine On
+
+# Các rule cho post và category
 RewriteRule ^post/([^/]+)/? index.php?page=post&id=$1 [L]
 RewriteRule ^category/([^/]+)/? index.php?page=category&id=$1 [L]
-# Chuyển yêu cầu không phải là tập tin hoặc thư mục đến file có .php theo đường dẫn gốc
+
+# Nếu không phải file hoặc thư mục, tự động thêm .php vào
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ $1.php [L,QSA]
+RewriteRule ^([^/]+)$ $1.php [L,QSA]
 
-
-# Chuyển hướng tất cả các yêu cầu không hợp lệ đến trang /404
+# Nếu không phải file hoặc thư mục, chuyển sang 404
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /404 [L]
+
 Options -Indexes
 
-
-
+# Các rule cho api
 RewriteRule ^api/atm /api/charging/atm_pay.php [L]
-
 RewriteRule ^atm /api/charging/atm_pay.php [L]
 RewriteRule ^api/getAtmPay /api/charging/atm_cron.php [L]
 

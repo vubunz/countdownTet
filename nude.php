@@ -4,6 +4,9 @@
             <div class="px-2"><a class="btn btn-menu btn-dangerxyz w-100 fw-semibold" href="/" style="color: white;">Trang chủ</a></div>
         </div>
         <div class="col">
+            <div class="px-2"><a class="btn btn-menu btn-dangerxyz w-100 fw-semibold" href="/forum.php" style="color: white;">Diễn đàn</a></div>
+        </div>
+        <div class="col">
             <?php
             if (isset($_SESSION['username'])) {
                 // Nếu đã đăng nhập, chuyển hướng bình thường

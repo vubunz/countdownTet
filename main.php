@@ -72,6 +72,7 @@ session_start();
                         </div>
                     </div>
                 </div>
+                <?php include_once './thongbao.php'; ?>
                 <?php include_once './nude.php'; ?>
                 <?php include_once './lo-ginnhap.php'; ?>
                 <?php include_once './kichactive.php'; ?>
