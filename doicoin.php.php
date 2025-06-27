@@ -226,7 +226,7 @@ ob_end_flush();
                   <div class="col">
                      <div class="w-100 fw-semibold cursor-pointer " onclick="handleClick(10000)">
                         <div id="button-10000" class="recharge-method-item false recharge-method-item" style="height: 90px;" data-value="10000">
-                           <div class="text-primary">10,000E</div>
+                           <div class="text-primary">10,000L</div>
                            <div class="center-text text-dark"><span>Nhận</span></div>
                            <div class="text-danger">30,000 lượng</div>
                         </div>
@@ -237,7 +237,7 @@ ob_end_flush();
                   <div class="col">
                      <div class="w-100 fw-semibold cursor-pointer" onclick="handleClick(20000)">
                         <div id="button-20000" class="recharge-method-item false false recharge-method-item" style="height: 90px;" data-value="20000">
-                           <div class="text-primary">20,000E</div>
+                           <div class="text-primary">20,000L</div>
                            <div class="center-text text-dark"><span>Nhận</span></div>
                            <div class="text-danger">60,000 lượng</div>
                         </div>
@@ -248,7 +248,7 @@ ob_end_flush();
                   <div class="col">
                      <div class="w-100 fw-semibold cursor-pointer" onclick="handleClick(50000)">
                         <div id="button-50000" class="recharge-method-item false false recharge-method-item" style="height: 90px;" data-value="50000">
-                           <div class="text-primary">50,000E</div>
+                           <div class="text-primary">50,000L</div>
                            <div class="center-text text-dark"><span>Nhận</span></div>
                            <div class="text-danger">150,000 lượng</div>
                         </div>
@@ -259,7 +259,7 @@ ob_end_flush();
                   <div class="col">
                      <div class="w-100 fw-semibold cursor-pointer" onclick="handleClick(100000)">
                         <div id="button-100000" class="recharge-method-item false false recharge-method-item" style="height: 90px;" data-value="100000">
-                           <div class="text-primary">100,000E</div>
+                           <div class="text-primary">100,000L</div>
                            <div class="center-text text-dark"><span>Nhận</span></div>
                            <div class="text-danger">300,000 lượng</div>
                         </div>
@@ -270,7 +270,7 @@ ob_end_flush();
                   <div class="col">
                      <div class="w-100 fw-semibold cursor-pointer" onclick="handleClick(200000)">
                         <div id="button-200000" class="recharge-method-item false false recharge-method-item" style="height: 90px;" data-value="200000">
-                           <div class="text-primary">200,000E</div>
+                           <div class="text-primary">200,000L</div>
                            <div class="center-text text-dark"><span>Nhận</span></div>
                            <div class="text-danger">600,000 lượng</div>
                         </div>
@@ -281,7 +281,7 @@ ob_end_flush();
                   <div class="col">
                      <div class="w-100 fw-semibold cursor-pointer" onclick="handleClick(500000)">
                         <div id="button-500000" class="recharge-method-item false false recharge-method-item" style="height: 90px;" data-value="500000">
-                           <div class="text-primary">500,000E</div>
+                           <div class="text-primary">500,000L</div>
                            <div class="center-text text-dark"><span>Nhận</span></div>
                            <div class="text-danger">1,500,000 lượng</div>
                         </div>
@@ -292,7 +292,7 @@ ob_end_flush();
                   <div class="col">
                      <div class="w-100 fw-semibold cursor-pointer" onclick="handleClick(1000000)">
                         <div id="button-1000000" class="recharge-method-item false false recharge-method-item" style="height: 90px;" data-value="1000000">
-                           <div class="text-primary">1,000,000E</div>
+                           <div class="text-primary">1,000,000L</div>
                            <div class="center-text text-dark"><span>Nhận</span></div>
                            <div class="text-danger">3,000,000 lượng</div>
                         </div>
@@ -303,7 +303,7 @@ ob_end_flush();
                   <div class="col">
                      <div class="w-100 fw-semibold cursor-pointer" onclick="handleClick(2000000)">
                         <div id="button-2000000" class="recharge-method-item false false recharge-method-item" style="height: 90px;" data-value="2000000">
-                           <div class="text-primary">2,000,000E</div>
+                           <div class="text-primary">2,000,000L</div>
                            <div class="center-text text-dark"><span>Nhận</span></div>
                            <div class="text-danger">6,000,000 lượng</div>
                         </div>
@@ -314,7 +314,7 @@ ob_end_flush();
                   <div class="col">
                      <div class="w-100 fw-semibold cursor-pointer" onclick="handleClick(5000000)">
                         <div id="button-5000000" class="recharge-method-item false false recharge-method-item" style="height: 90px;" data-value="5000000">
-                           <div class="text-primary">5,000,000E</div>
+                           <div class="text-primary">5,000,000L</div>
                            <div class="center-text text-dark"><span>Nhận</span></div>
                            <div class="text-danger">15,000,000 lượng</div>
                         </div>
@@ -325,7 +325,7 @@ ob_end_flush();
                   <!-- <div class="col">
                      <div class="w-100 fw-semibold cursor-pointer" onclick="handleClick(5000000)">
                         <div id="button-5000000" class="recharge-method-item false false recharge-method-item" style="height: 90px;" data-value="5000000">
-                           <div class="text-primary">10,000,000E</div>
+                           <div class="text-primary">10,000,000L</div>
                            <div class="center-text text-dark"><span>Nhận</span></div>
                            <div class="text-danger">30,000,000 lượng</div>
                         </div>

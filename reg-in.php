@@ -28,6 +28,7 @@
           </div>
           <div class="text-center mt-3">
             <button type="submit" class="me-3 btn btn-primary">Đăng ký</button><button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Hủy bỏ</button>
+            <div class="pt-3">Với việc đăng ký tài khoản này, bạn đồng ý tuân thủ tất cả các <a href="/terms.php" class="link-primary cursor-pointer">Điều khoản và Chính sách</a> của máy chủ</div>
             <div class="pt-3">Bạn đã có tài khoản? <a data-bs-toggle="modal" data-bs-target="#modalLogin" class="link-primary cursor-pointer">Đăng nhập ngay</a></div>
             <div><a data-bs-toggle="modal" data-bs-target="#modalForgotPass" class="link-primary cursor-pointer">Quên mật khẩu</a></div>
           </div>

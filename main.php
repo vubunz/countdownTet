@@ -267,3 +267,37 @@ session_start();
                         audio.play();
                     }
                 </script> -->
+                <script>
+                    const flurryContainer = document.createElement('div');
+                    flurryContainer.className = 'flurry-container';
+                    flurryContainer.style.cssText = 'pointer-events:none;position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;overflow:hidden;';
+                    document.body.appendChild(flurryContainer);
+
+                    const icons = ['🌸', '❄', '🍁', '🍂', '🍃', '🪶', '🦋', '⭐', '✨'];
+
+                    function createFlake() {
+                        const flake = document.createElement('span');
+                        flake.innerText = icons[Math.floor(Math.random() * icons.length)];
+                        flake.style.position = 'absolute';
+                        flake.style.top = '-24px';
+                        flake.style.left = Math.random() * window.innerWidth + 'px';
+                        flake.style.fontSize = (12 + Math.random() * 16) + 'px';
+                        flake.style.opacity = 0.8 + Math.random() * 0.2;
+                        flake.style.transition = `transform 8s linear, opacity 8s cubic-bezier(1,0.3,0.6,0.74)`;
+                        flake.style.transform = `translateY(0px) rotateZ(${Math.random()*360}deg)`;
+                        flake.style.textShadow = '0 0 2px #fff';
+                        flurryContainer.appendChild(flake);
+
+                        setTimeout(() => {
+                            flake.style.transform = `translateY(${window.innerHeight + 40}px) rotateZ(${Math.random()*360}deg)`;
+                            flake.style.opacity = 0;
+                        }, 50);
+
+                        setTimeout(() => {
+                            if (flake.parentNode) flurryContainer.removeChild(flake);
+                        }, 8000);
+                    }
+
+                    // Tạo hoa/lá rơi liên tục
+                    setInterval(createFlake, 2000);
+                </script>

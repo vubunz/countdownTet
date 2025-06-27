@@ -76,7 +76,7 @@ $configNapTien = [
     ],
     'zalo' => [
         'sdt' => '',
-        'group' => 'https://zalo.me/g/wtetnh822',
+        'group' => 'https://zalo.me/g/wfgcta886',
     ],
     'SEVER' => [
         'tensv' => 'legacy',
