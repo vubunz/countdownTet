@@ -22,6 +22,7 @@ $_alert = null;
 						<th style='text-align:center; font-size: 15px'>Nhân vật</th>
 						<th style='text-align:center; font-size: 15px'>Phái</th>
 						<th style='text-align:center; font-size: 15px'>Level</th>
+						<th style='text-align:center; font-size: 15px'>Thời gian đạt level</th>
 						<!-- <th style='text-align:center; font-size: 15px'>Kinh nghiệm</th> -->
 					</tr>
 				</thead>
@@ -51,11 +52,15 @@ $_alert = null;
 								// Tính level dựa trên exp (bạn có thể điều chỉnh công thức này)
 								$level = calculateLevel($exp);
 
+								// Lấy thời gian đạt level
+								$levelUpTime = isset($data['levelUpTime']) ? $data['levelUpTime'] : 0;
+
 								$players_with_exp[] = array(
 									'name' => htmlspecialchars($row['name']),
 									'class' => $row['class'],
 									'exp' => $exp,
-									'level' => $level
+									'level' => $level,
+									'levelUpTime' => $levelUpTime
 								);
 							}
 						}
@@ -73,12 +78,16 @@ $_alert = null;
 							// Xác định class
 							$class = getClass($player['class']);
 
+							// Format thời gian đạt level
+							$levelTime = formatLevelUpTime($player['levelUpTime']);
+
 							if ($ranking == 1) {
 								echo "<tr>";
 								echo "<td style='text-align:center; color:red'><b>[TOP " . $ranking . "]</b></td>";
 								echo "<td style='text-align:center; color:red'><b>" . $player['name'] . "</b></td>";
 								echo "<td style='text-align:center; color:red'><b>" . $class . "</b></td>";
 								echo "<td style='text-align:center; color:red'><b>" . $player['level'] . "</b></td>";
+								echo "<td style='text-align:center; color:red'><b>" . $levelTime . "</b></td>";
 								// echo "<td style='text-align:center; color:red'><b>" . number_format($player['exp']) . "</b></td>";
 								echo "</tr>";
 							} else if ($ranking == 2) {
@@ -87,6 +96,7 @@ $_alert = null;
 								echo "<td style='text-align:center; color:blue'><b>" . $player['name'] . "</b></td>";
 								echo "<td style='text-align:center; color:blue'><b>" . $class . "</b></td>";
 								echo "<td style='text-align:center; color:blue'><b>" . $player['level'] . "</b></td>";
+								echo "<td style='text-align:center; color:blue'><b>" . $levelTime . "</b></td>";
 								// echo "<td style='text-align:center; color:blue'><b>" . number_format($player['exp']) . "</b></td>";
 								echo "</tr>";
 							} else if ($ranking == 3) {
@@ -95,6 +105,7 @@ $_alert = null;
 								echo "<td style='text-align:center; color:#0096ff'><b>" . $player['name'] . "</b></td>";
 								echo "<td style='text-align:center; color:#0096ff'><b>" . $class . "</b></td>";
 								echo "<td style='text-align:center; color:#0096ff'><b>" . $player['level'] . "</b></td>";
+								echo "<td style='text-align:center; color:#0096ff'><b>" . $levelTime . "</b></td>";
 								// echo "<td style='text-align:center; color:#0096ff'><b>" . number_format($player['exp']) . "</b></td>";
 								echo "</tr>";
 							} else {
@@ -103,6 +114,7 @@ $_alert = null;
 								echo "<td style='text-align:center; color:#008080'>" . $player['name'] . "</td>";
 								echo "<td style='text-align:center; color:#008080'>" . $class . "</td>";
 								echo "<td style='text-align:center; color:#008080'>" . $player['level'] . "</td>";
+								echo "<td style='text-align:center; color:#008080'>" . $levelTime . "</td>";
 								// echo "<td style='text-align:center; color:#008080'>" . number_format($player['exp']) . "</td>";
 								echo "</tr>";
 							}
@@ -111,7 +123,21 @@ $_alert = null;
 
 						mysqli_stmt_close($stmt);
 					} else {
-						echo "<tr><td colspan='5' style='text-align:center; color:red;'>Lỗi truy vấn dữ liệu</td></tr>";
+						echo "<tr><td colspan='6' style='text-align:center; color:red;'>Lỗi truy vấn dữ liệu</td></tr>";
+					}
+
+					// Hàm format thời gian đạt level
+					function formatLevelUpTime($levelUpTime)
+					{
+						if ($levelUpTime <= 0) {
+							return "Chưa có dữ liệu";
+						}
+
+						// Chuyển từ milliseconds sang seconds
+						$timestamp = $levelUpTime / 1000;
+
+						// Format theo định dạng Việt Nam
+						return date('d/m/Y H:i:s', $timestamp);
 					}
 
 					// Hàm tính level dựa trên exp (tổng lũy kế từ bảng từng mốc EXP, đúng như mô tả)

@@ -116,7 +116,7 @@ try {
         }
     }
     if (!$found) {
-        echo json_encode(['success' => false, 'message' => 'Không tìm thấy giao dịch phù hợp. Vui lòng thử lại sau!'], JSON_UNESCAPED_UNICODE);
+        echo json_encode(['success' => false, 'message' => 'Không tìm thấy giao dịch phù hợp. Liên hệ admin để được hỗ trợ'], JSON_UNESCAPED_UNICODE);
     }
 } catch (Exception $e) {
     http_response_code(500);
