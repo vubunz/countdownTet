@@ -65,9 +65,14 @@ $_alert = null;
 							}
 						}
 
-						// Sắp xếp theo exp giảm dần
+						// Sắp xếp theo level giảm dần, nếu cùng level thì sắp xếp theo thời gian đạt level tăng dần (sớm nhất lên đầu)
 						usort($players_with_exp, function ($a, $b) {
-							return $b['exp'] - $a['exp'];
+							// So sánh level trước
+							if ($a['level'] != $b['level']) {
+								return $b['level'] - $a['level']; // Level cao hơn xếp trước
+							}
+							// Nếu cùng level thì so sánh thời gian đạt level
+							return $a['levelUpTime'] - $b['levelUpTime']; // Thời gian sớm hơn xếp trước
 						});
 
 						// Lấy top 20
