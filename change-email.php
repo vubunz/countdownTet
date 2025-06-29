@@ -61,11 +61,11 @@ if (
                 $mail->isSMTP();
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
-                $mail->Username = 'hotro.realbunz@gmail.com'; // Thay bằng Gmail của bạn
-                $mail->Password = 'bunp skdc fwqh gokc';    // Thay bằng App Password 16 ký tự
+                $mail->Username = 'hotro.nsolegacy@gmail.com'; // Thay bằng Gmail của bạn
+                $mail->Password = 'lpyy jhtp pikr hpjo';    // Thay bằng App Password 16 ký tự
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port = 587;
-                $mail->setFrom('hotro.realbunz@gmail.com', 'NINJA LEGACY - Hỗ trợ tài khoản');
+                $mail->setFrom('hotro.nsolegacy@gmail.com', 'NINJA LEGACY - Hỗ trợ tài khoản');
                 $mail->addAddress($email);
                 $mail->isHTML(true);
                 $mail->Subject = 'Mã xác thực đổi email NINJA LEGACY';

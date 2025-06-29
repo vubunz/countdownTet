@@ -35,49 +35,51 @@ if ($result && $result->num_rows > 0) {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'hotro.realbunz@gmail.com'; // Thay bằng Gmail của bạn
-        $mail->Password   = 'bunp skdc fwqh gokc';    // Thay bằng App Password 16 ký tự
+        $mail->Username   = 'hotro.nsolegacy@gmail.com'; // Thay bằng Gmail của bạn
+        $mail->Password   = 'lpyy jhtp pikr hpjo';    // Thay bằng App Password 16 ký tự
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
         // Thông tin người gửi
-        $mail->setFrom('hotro.realbunz@gmail.com', 'NINJA LEGACY');
+        $mail->setFrom('hotro.nsolegacy@gmail.com', 'NINJA LEGACY');
         $mail->addAddress($email);
 
         $mail->isHTML(true); // Gửi HTML mail cho đẹp
         $mail->Subject = 'Khôi phục mật khẩu tài khoản NINJA LEGACY';
         $mail->Body = '
-<div style="font-family: Arial, Helvetica, sans-serif; background: #fff;">
-    <div style="background: #222; padding: 16px 0; text-align: center;">
-        <img src="https://res.cloudinary.com/dcivynist/image/upload/v1751214428/lego_t6ywou.png" alt="NINJA LEGACY" style="height: 40px;">
+<div style="background:#f6f6f6;padding:0;margin:0;font-family:Arial,sans-serif;">
+  <div style="max-width:500px;margin:40px auto;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05);overflow:hidden;">
+    <div style="text-align:center;padding:32px 0 0 0;">
+      <img src="https://res.cloudinary.com/dcivynist/image/upload/v1751214428/lego_t6ywou.png" alt="NINJA LEGACY" style="height:48px;">
     </div>
-    <div style="background: #e53935; color: #fff; padding: 16px; font-size: 20px; font-weight: bold;">
-        Thông báo khôi phục tài khoản trên <a href="https://nsolegacy.io.vn/" style="color: #fff; text-decoration: underline;">nsolegacy.io.vn</a>
-        <div style="font-size: 13px; font-style: italic; color: #fff;">Email tự động – Vui lòng không trả lời</div>
-    </div>
-    <div style="padding: 24px;">
-        <p>Thân gửi <b>' . htmlspecialchars($username) . '</b>,</p>
-        <p>Cảm ơn bạn đã tin tưởng và sử dụng dịch vụ của <b>NINJA LEGACY</b>.</p>
-        <p>
-            Bạn hoặc ai đó vừa yêu cầu khôi phục mật khẩu cho tài khoản trên <a href="https://nsolegacy.io.vn/" target="_blank">https://nsolegacy.io.vn/</a>.<br>
-            <br>
-            <b>Thông tin tài khoản:</b><br>
-            Tên đăng nhập: <b>' . htmlspecialchars($username) . '</b><br>
-            Mật khẩu: <b>' . htmlspecialchars($password) . '</b><br>
-        </p>
-        <p style="color: #e53935;">
-            Nếu bạn không thực hiện yêu cầu này, vui lòng bỏ qua email này.<br>
-            Nếu cần hỗ trợ, hãy liên hệ đội ngũ hỗ trợ của chúng tôi.
-        </p>
-        <hr>
-        <div style="font-size: 13px; color: #888;">
-            <b>Website:</b> <a href="https://nsolegacy.io.vn/" target="_blank">nsolegacy.io.vn</a><br>
-            <b>Facebook:</b> <a href="https://www.facebook.com/profile.php?id=61577114496898" target="_blank">NINJA LEGACY</a>
-        </div>
-    </div>
-    <div style="background: #222; color: #fff; text-align: center; padding: 12px; font-size: 12px;">
+    <div style="padding:0 32px 32px 32px;">
+      <h2 style="color:#222;text-align:center;margin-top:24px;margin-bottom:8px;font-size:24px;font-weight:700;">Khôi phục mật khẩu</h2>
+      <div style="text-align:center;margin-bottom:24px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="Reset Password" style="height:56px;margin:16px 0;">
+      </div>
+      <p style="text-align:center;font-size:16px;color:#222;"><b>Xin chào ' . htmlspecialchars($username) . ',</b></p>
+      <p style="text-align:center;font-size:15px;color:#444;">
+        Bạn hoặc ai đó vừa yêu cầu khôi phục mật khẩu cho tài khoản <b>NINJA LEGACY</b>.<br>
+        Dưới đây là thông tin tài khoản của bạn:
+      </p>
+      <div style="background:#f2f2f2;border-radius:6px;padding:18px 0;margin:24px 0;text-align:center;">
+        <div style="font-size:16px;color:#222;margin-bottom:8px;"><b>Tên đăng nhập:</b> ' . htmlspecialchars($username) . '</div>
+        <div style="font-size:16px;color:#222;"><b>Mật khẩu:</b> ' . htmlspecialchars($password) . '</div>
+      </div>
+      <p style="text-align:center;font-size:14px;color:#888;">
+        Nếu bạn không thực hiện yêu cầu này, hãy bỏ qua email này.<br>
+        Nếu cần hỗ trợ, hãy liên hệ đội ngũ hỗ trợ của chúng tôi.
+      </p>
+      <hr style="margin:32px 0 16px 0;border:none;border-top:1px solid #eee;">
+      <div style="text-align:center;font-size:13px;color:#aaa;">
+        <b>Website:</b> <a href="https://nsolegacy.io.vn/" style="color:#2d9cdb;text-decoration:none;">nsolegacy.io.vn</a> |
+        <b>Facebook:</b> <a href="https://www.facebook.com/profile.php?id=61577114496898" style="color:#2d9cdb;text-decoration:none;">NINJA LEGACY</a>
+      </div>
+      <div style="text-align:center;font-size:12px;color:#bbb;margin-top:16px;">
         &copy; ' . date('Y') . ' NINJA LEGACY.
+      </div>
     </div>
+  </div>
 </div>
 ';
         $mail->AltBody = "Tên đăng nhập: $username\nMật khẩu: $password\nNINJA LEGACY";

@@ -254,7 +254,7 @@ ob_end_flush();
                     <strong>Mọi thắc mắc, báo cáo lỗi hoặc khiếu nại, vui lòng liên hệ với quản trị viên thông qua:</strong><br><br>
                     • Facebook: <a href="https://www.facebook.com/profile.php?id=61577114496898" target="_blank">Fanpage LEGACY</a><br>
                     • Zalo: <a href="https://zalo.me/g/wfgcta886" target="_blank">Zalo LEGACY</a><br>
-                    • Email: hotro.realbunz@gmail.com<br>
+                    • Email: hotro.nsolegacy@gmail.com<br>
                 </div>
 
                 <div class="text-center mt-4">
