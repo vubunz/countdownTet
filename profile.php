@@ -35,8 +35,13 @@ if (!isset($_SESSION['username'])) {
             </tr>
 
             <tr class="fw-semibold">
+               <td>Email</td>
+               <td><?php echo $row['email'] ?>(<a class="cursor-pointer text-primary" href="/change-email">Đổi email</a>)</td>
+            </tr>
+
+            <tr class="fw-semibold">
                <td>Số dư</td>
-               <td><?php echo $row['coin'] ?> P</td>
+               <td><?php echo number_format($row['coin']) ?> LCoin</td>
             </tr>
 
             <tr class="fw-semibold">

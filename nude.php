@@ -53,7 +53,7 @@
             <div class="px-2"><a class="btn btn-menu btn-dangerxyz w-100 fw-semibold false" href="<?php echo $configNapTien['zalo']['group']; ?>" style="color: white;">Box Zalo</a></div>
         </div>
         <div class="col">
-            <div class="px-2"><a class="btn btn-menu btn-dangerxyz w-100 fw-semibold false" href="./download" style="color: white;">Tải game</a></div>
+            <div class="px-2"><a class="btn btn-menu btn-dangerxyz w-100 fw-semibold false" href="/download" style="color: white;">Tải game</a></div>
         </div>
         <!--<div class="col">
             <div class="px-2"><a class="btn btn-menu btn-dangerxyz w-100 fw-semibold false" href="//www.youtube.com/">Tiktok(Live)</a></div>

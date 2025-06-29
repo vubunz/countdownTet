@@ -26,6 +26,11 @@
             <div class="input-group"><input name="repassw" id="repassw" type="password" autocomplete="off" placeholder="Nhập mật khẩu" class="form-control form-control-solid" value=""></div>
             <div class="invalid-feedback">Không được bỏ trống</div>
           </div>
+          <div class="mb-2">
+            <label class="fw-semibold">Nhập Email (không yêu cầu)</label>
+            <div class="input-group"><input name="mail" id="mail" type="text" autocomplete="off" placeholder="Email dùng để quên pass" class="form-control form-control-solid" value=""></div>
+            <div class="invalid-feedback">Không được bỏ trống</div>
+          </div>
           <div class="text-center mt-3">
             <button type="submit" class="me-3 btn btn-primary">Đăng ký</button><button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Hủy bỏ</button>
             <div class="pt-3">Với việc đăng ký tài khoản này, bạn đồng ý tuân thủ tất cả các <a href="/terms.php" class="link-primary cursor-pointer">Điều khoản và Chính sách</a> của máy chủ</div>
@@ -46,8 +51,8 @@
       return /^[a-zA-Z0-9]+$/i.test(str);
     }
 
-    function isValidEmail(email) {
-      return /^[0-9]+$/.test(email);
+    function isValidPhone(phone) {
+      return /^[0-9]+$/.test(phone);
     }
 
     function handleFormSubmission(event) {
@@ -63,7 +68,12 @@
       var listInValid = event.currentTarget.querySelectorAll('.invalid-feedback');
 
       listInput.forEach((item, index) => {
+        if (!listInValid[index]) return;
         let val = item.value;
+        if (index === 4) {
+          listInValid[index].classList.remove('d-block');
+          return;
+        }
         if (val.trim().length == 0) {
           listInValid[index].innerHTML = "Không được để trống.";
           check = false;
@@ -76,8 +86,8 @@
           listInValid[index].innerHTML = "Tên đăng nhập không được chứa ký tự đặc biệt, ký tự hoa, hoặc khoảng trắng shop ơi!";
           check = false;
           listInValid[index].classList.add('d-block');
-        } else if (index == 1 && !isValidEmail(val.trim())) {
-          listInValid[index].innerHTML = "Email không hợp lệ.";
+        } else if (index == 1 && !isValidPhone(val.trim())) {
+          listInValid[index].innerHTML = "Số điện thoại không hợp lệ.";
           check = false;
           listInValid[index].classList.add('d-block');
         } else if (index == 3 && (val.trim() != listInput[index - 1].value.trim())) {
@@ -92,7 +102,8 @@
       if (check) {
         let user_name = $('input#uname').val();
         let pass_word = $('input#passw').val();
-        let email = $('input#email').val();
+        let phone = $('input#phone').val();
+        let email = $('input#mail').val();
         $("#NotiflixLoadingWrap").removeClass('hide');
         $.ajax({
           url: './post-reg.php',
@@ -101,6 +112,7 @@
           data: JSON.stringify({
             "username": user_name,
             "password": pass_word,
+            "phone": phone,
             "email": email
           }),
           success: function(data, textStatus, xhr) {

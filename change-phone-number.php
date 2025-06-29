@@ -73,7 +73,7 @@ ob_end_flush();
             <form class="pb-3" method="POST" action="change-phone-number">
                 <div class="mb-2">
                     <div class="input-group">
-                        <input type="text" class="form-control form-control-solid" name="old_phone" id="old_phone" placeholder="Nhập mã (liên hệ admin)" required>
+                        <input type="text" class="form-control form-control-solid" name="old_phone" id="old_phone" placeholder="Nhập mã (SĐT Cũ)" required>
                     </div>
                 </div>
 

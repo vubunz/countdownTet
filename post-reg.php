@@ -5,7 +5,8 @@ $data = json_decode(file_get_contents('php://input'), true);
 
 $username = isset($data['username']) ? $data['username'] : '';
 $password = isset($data['password']) ? $data['password'] : '';
-$email = isset($data['phone']) ? $data['phone'] : '';
+$phone = isset($data['phone']) ? $data['phone'] : '';
+$email = isset($data['email']) ? $data['email'] : '';
 $created_at = date("Y-m-d H:i:s");
 
 try {
@@ -27,7 +28,7 @@ try {
     } else {
         // Kiểm tra xem Email đã tồn tại chưa
         $stmt = $conn->prepare("SELECT * FROM users WHERE phone = ? LIMIT 1");
-        $stmt->bind_param("s", $email);
+        $stmt->bind_param("s", $phone);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -36,16 +37,16 @@ try {
             echo '{"code": "03", "text": "Số Điện Thoại đã tồn tại trên hệ thống."}';
         } else {
             // Thực hiện thêm mới người dùng với created_at và đặt giá trị "vip" là 1
-            $stmt = $conn->prepare("INSERT INTO users (username, password, phone, created_at, isVip) VALUES (?, ?, ?, ?, 0)");
-            $stmt->bind_param("ssss", $username, $password, $email, $created_at);
+            $stmt = $conn->prepare("INSERT INTO users (username, password, phone, email, created_at, isVip, activated) VALUES (?, ?, ?, ?, ?, 0, 1)");
+            $stmt->bind_param("sssss", $username, $password, $phone, $email, $created_at);
             $stmt->execute();
 
             if ($stmt->affected_rows > 0) {
                 $maskedPassword = str_repeat('*', strlen($password));
-                $maskedEmail = str_repeat('*', strlen($email));
+                $maskedPhone = str_repeat('*', strlen($phone));
                 $formattedTime = date("F j, Y, g:i a");
                 $log  = "Host: " . $_SERVER['REMOTE_ADDR'] . ' - ' . $formattedTime . PHP_EOL .
-                    "Content REGISTER: " . json_encode(["username" => $username, "password" => $maskedPassword, "phone" => $maskedEmail]) . PHP_EOL .
+                    "Content REGISTER: " . json_encode(["username" => $username, "password" => $maskedPassword, "phone" => $maskedPhone]) . PHP_EOL .
                     "-------------------------" . PHP_EOL;
                 file_put_contents('./lichsu/register/regs_' . date("j.n.Y") . '.log', $log, FILE_APPEND);
 

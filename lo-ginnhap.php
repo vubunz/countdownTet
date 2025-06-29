@@ -9,6 +9,7 @@ if (file_exists($loginFilePath)) {
     // Xử lý lỗi nếu tệp tin không tồn tại
     echo "Lỗi: Tệp tin xử lý đăng nhập không tồn tại!";
 }*/
+include_once('forget-pass.php');
 ?>
 
 <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
