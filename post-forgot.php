@@ -46,23 +46,40 @@ if ($result && $result->num_rows > 0) {
 
         $mail->isHTML(true); // Gửi HTML mail cho đẹp
         $mail->Subject = 'Khôi phục mật khẩu tài khoản NINJA LEGACY';
-        $mail->Body    = "
-            <div style='font-family: Arial, Helvetica, sans-serif; font-size: 15px;'>
-                <b>Xin chào!</b><br><br>
-                Bạn (hoặc ai đó) vừa yêu cầu khôi phục mật khẩu cho tài khoản trên <b>NINJA LEGACY</b>.<br>
-                <b>Thông tin tài khoản:</b><br>
-                Tên đăng nhập: <b>$username</b><br>
-                Mật khẩu: <b>$password</b><br><br>
-                Nếu bạn không yêu cầu, hãy bỏ qua email này.<br>
-                <hr>
-                <i>
-                    Trân trọng,<br>
-                    Đội ngũ hỗ trợ <b>NINJA LEGACY</b><br>
-                    <a href='https://nsolegacy.io.vn/' target='_blank'>🌐 Website: nsolegacy.io.vn</a><br>
-                    <a href='https://www.facebook.com/profile.php?id=61577114496898' target='_blank'>📘 Facebook NINJA LEGACY</a>
-                </i>
-            </div>
-        ";
+        $mail->Body = '
+<div style="font-family: Arial, Helvetica, sans-serif; background: #fff;">
+    <div style="background: #222; padding: 16px 0; text-align: center;">
+        <img src="https://res.cloudinary.com/dcivynist/image/upload/v1751214428/lego_t6ywou.png" alt="NINJA LEGACY" style="height: 40px;">
+    </div>
+    <div style="background: #e53935; color: #fff; padding: 16px; font-size: 20px; font-weight: bold;">
+        Thông báo khôi phục tài khoản trên <a href="https://nsolegacy.io.vn/" style="color: #fff; text-decoration: underline;">nsolegacy.io.vn</a>
+        <div style="font-size: 13px; font-style: italic; color: #fff;">Email tự động – Vui lòng không trả lời</div>
+    </div>
+    <div style="padding: 24px;">
+        <p>Thân gửi <b>' . htmlspecialchars($username) . '</b>,</p>
+        <p>Cảm ơn bạn đã tin tưởng và sử dụng dịch vụ của <b>NINJA LEGACY</b>.</p>
+        <p>
+            Bạn hoặc ai đó vừa yêu cầu khôi phục mật khẩu cho tài khoản trên <a href="https://nsolegacy.io.vn/" target="_blank">https://nsolegacy.io.vn/</a>.<br>
+            <br>
+            <b>Thông tin tài khoản:</b><br>
+            Tên đăng nhập: <b>' . htmlspecialchars($username) . '</b><br>
+            Mật khẩu: <b>' . htmlspecialchars($password) . '</b><br>
+        </p>
+        <p style="color: #e53935;">
+            Nếu bạn không thực hiện yêu cầu này, vui lòng bỏ qua email này.<br>
+            Nếu cần hỗ trợ, hãy liên hệ đội ngũ hỗ trợ của chúng tôi.
+        </p>
+        <hr>
+        <div style="font-size: 13px; color: #888;">
+            <b>Website:</b> <a href="https://nsolegacy.io.vn/" target="_blank">nsolegacy.io.vn</a><br>
+            <b>Facebook:</b> <a href="https://www.facebook.com/profile.php?id=61577114496898" target="_blank">NINJA LEGACY</a>
+        </div>
+    </div>
+    <div style="background: #222; color: #fff; text-align: center; padding: 12px; font-size: 12px;">
+        &copy; ' . date('Y') . ' NINJA LEGACY.
+    </div>
+</div>
+';
         $mail->AltBody = "Tên đăng nhập: $username\nMật khẩu: $password\nNINJA LEGACY";
 
         $mail->send();
