@@ -2,6 +2,38 @@ Array
 (
     [0] => Array
         (
+            [id] => 16213427
+            [bank_brand_name] => MBBank
+            [account_number] => 0946817429
+            [transaction_date] => 2025-06-28 22:05:00
+            [amount_out] => 50000.00
+            [amount_in] => 0.00
+            [accumulated] => 0.00
+            [transaction_content] => HO LONG VU chuyen tien - Ma giao dich/ Trace 881664
+            [reference_number] => FT25179012892032
+            [code] => 
+            [sub_account] => 
+            [bank_account_id] => 15266
+        )
+
+    [1] => Array
+        (
+            [id] => 16213260
+            [bank_brand_name] => MBBank
+            [account_number] => 0946817429
+            [transaction_date] => 2025-06-28 22:05:00
+            [amount_out] => 0.00
+            [amount_in] => 50000.00
+            [accumulated] => 0.00
+            [transaction_content] => 92312204605-nt realbunz-CHUYEN TIEN-OQCHA0953388-MOMO92312204605MOMO
+            [reference_number] => FT25179662655990
+            [code] => 
+            [sub_account] => 
+            [bank_account_id] => 15266
+        )
+
+    [2] => Array
+        (
             [id] => 16074029
             [bank_brand_name] => MBBank
             [account_number] => 0946817429
@@ -16,7 +48,7 @@ Array
             [bank_account_id] => 15266
         )
 
-    [1] => Array
+    [3] => Array
         (
             [id] => 16073818
             [bank_brand_name] => MBBank
@@ -32,7 +64,7 @@ Array
             [bank_account_id] => 15266
         )
 
-    [2] => Array
+    [4] => Array
         (
             [id] => 15702042
             [bank_brand_name] => MBBank
@@ -48,7 +80,7 @@ Array
             [bank_account_id] => 15266
         )
 
-    [3] => Array
+    [5] => Array
         (
             [id] => 15701768
             [bank_brand_name] => MBBank
@@ -64,7 +96,7 @@ Array
             [bank_account_id] => 15266
         )
 
-    [4] => Array
+    [6] => Array
         (
             [id] => 15676092
             [bank_brand_name] => MBBank
@@ -80,7 +112,7 @@ Array
             [bank_account_id] => 15266
         )
 
-    [5] => Array
+    [7] => Array
         (
             [id] => 15635858
             [bank_brand_name] => MBBank
@@ -96,7 +128,7 @@ Array
             [bank_account_id] => 15266
         )
 
-    [6] => Array
+    [8] => Array
         (
             [id] => 15635467
             [bank_brand_name] => MBBank
@@ -112,7 +144,7 @@ Array
             [bank_account_id] => 15266
         )
 
-    [7] => Array
+    [9] => Array
         (
             [id] => 15635364
             [bank_brand_name] => MBBank
@@ -128,7 +160,7 @@ Array
             [bank_account_id] => 15266
         )
 
-    [8] => Array
+    [10] => Array
         (
             [id] => 15635278
             [bank_brand_name] => MBBank
@@ -144,7 +176,7 @@ Array
             [bank_account_id] => 15266
         )
 
-    [9] => Array
+    [11] => Array
         (
             [id] => 15635045
             [bank_brand_name] => MBBank
@@ -160,7 +192,7 @@ Array
             [bank_account_id] => 15266
         )
 
-    [10] => Array
+    [12] => Array
         (
             [id] => 15634817
             [bank_brand_name] => MBBank
@@ -176,7 +208,7 @@ Array
             [bank_account_id] => 15266
         )
 
-    [11] => Array
+    [13] => Array
         (
             [id] => 15633341
             [bank_brand_name] => MBBank
@@ -192,7 +224,7 @@ Array
             [bank_account_id] => 15266
         )
 
-    [12] => Array
+    [14] => Array
         (
             [id] => 15632928
             [bank_brand_name] => MBBank
@@ -208,7 +240,7 @@ Array
             [bank_account_id] => 15266
         )
 
-    [13] => Array
+    [15] => Array
         (
             [id] => 15632274
             [bank_brand_name] => MBBank
@@ -224,7 +256,7 @@ Array
             [bank_account_id] => 15266
         )
 
-    [14] => Array
+    [16] => Array
         (
             [id] => 15631024
             [bank_brand_name] => MBBank
@@ -240,7 +272,7 @@ Array
             [bank_account_id] => 15266
         )
 
-    [15] => Array
+    [17] => Array
         (
             [id] => 15085927
             [bank_brand_name] => MBBank
@@ -256,7 +288,7 @@ Array
             [bank_account_id] => 15266
         )
 
-    [16] => Array
+    [18] => Array
         (
             [id] => 15080315
             [bank_brand_name] => MBBank
@@ -272,7 +304,7 @@ Array
             [bank_account_id] => 15266
         )
 
-    [17] => Array
+    [19] => Array
         (
             [id] => 15079603
             [bank_brand_name] => MBBank
@@ -283,22 +315,6 @@ Array
             [accumulated] => 0.00
             [transaction_content] => nt realbunz FT25167797340088   Ma giao dich  Trace980265 Trace 980265
             [reference_number] => FT25167300094324
-            [code] => 
-            [sub_account] => 
-            [bank_account_id] => 15266
-        )
-
-    [18] => Array
-        (
-            [id] => 15063415
-            [bank_brand_name] => MBBank
-            [account_number] => 0946817429
-            [transaction_date] => 2025-06-16 09:58:00
-            [amount_out] => 0.00
-            [amount_in] => 2000.00
-            [accumulated] => 0.00
-            [transaction_content] => HO LONG VU chuyen nz FT25167923989940   Ma giao dich  Trace654396 Trace 654396
-            [reference_number] => FT25167436570858
             [code] => 
             [sub_account] => 
             [bank_account_id] => 15266

@@ -58,7 +58,12 @@ if (!isset($_SESSION['username'])) {
             </div>
          </div>
       </div> -->
-      <div>
+
+      <div class="fs-5 fw-semibold text-center">Hiện tại máy chủ chưa hỗ trợ nạp tiền</div>
+
+
+      <!-- tạm tắt chức năng nạp  -->
+      <!-- <div>
          <div class="fs-5 fw-semibold text-center">Chọn hình thức nạp</div>
          <div class="row text-center justify-content-center row-cols-2 row-cols-lg-5 g-2 g-lg-2 my-1 mb-2">
             <div class="col">
@@ -71,7 +76,7 @@ if (!isset($_SESSION['username'])) {
       <?php
       include_once('./momo.php');
 
-      ?>
+      ?> -->
    </div>
 
 </div>
