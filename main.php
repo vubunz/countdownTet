@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NinjaLegacy Ký Ức Tuổi Thơ</title>
     <link rel="stylesheet" href="/../static/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>

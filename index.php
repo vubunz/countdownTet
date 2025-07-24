@@ -52,6 +52,8 @@ $action = isset($_GET['action']) ? $_GET['action'] : '';
                 include("./post.php");
             } elseif ($page == 'category') {
                 include("./category.php");
+            } elseif ($page == 'rps-war') {
+                include("./rps_war.php");
             } else {
                 include("./hom.php");
             }

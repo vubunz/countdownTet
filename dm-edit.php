@@ -396,7 +396,7 @@ ob_end_flush();
                 // Nút xóa
                 echo "<td>
                         <form method='post' action=''>
-                            <input type='hidden' name='huong_danId' value='" . $row["id"] . "'>
+                            <input type='hidden' name='news_portsId' value='" . $row["id"] . "'>
                             <button type='submit' name='delete' class='mb-3 px-2 py-1 fw-semibold text-secondary bg-danger bg-opacity-25 border border-danger border-opacity-75 rounded-2 link-success cursor-pointer'>Xóa</button>
                         </form>";
 

@@ -135,4 +135,6 @@ ob_end_flush();
             Chưa có bài viết nào trong diễn đàn.
         </div>
     <?php endif; ?>
+    <?php include_once './end.php'; ?>
+
 </div>

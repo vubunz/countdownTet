@@ -1,13 +1,22 @@
 <div class="text-center my-2">
-    <div class="age-rule">
+    <div class="age-rule mb-2">
         <img src="/images/12.png" alt="Age Rule" height="12" style="filter: invert(100%);">
         <span style="color: black;">Trò chơi dành cho người chơi 12 tuổi trở lên. Chơi quá 180 phút mỗi ngày sẽ có hại cho sức khỏe</span>
     </div>
+
+    <div class="contact-links text-sm" style="color: black;">
+        <a href="https://facebook.com" target="_blank" style="margin: 0 8px; color: inherit; text-decoration: none;">
+            Facebook
+        </a>|
+        <a href="https://zalo.me" target="_blank" style="margin: 0 8px; color: inherit; text-decoration: none;">
+            Zalo
+        </a>|
+        <a href="/terms.php" target="_blank" style="margin: 0 8px; color: inherit; text-decoration: none;">
+            Chính sách
+        </a>
+    </div>
 </div>
-</div>
-</div>
-</div>
-</div>
+
 
 <!--
 <script>
