@@ -15,7 +15,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: free02.123host.vn
-          username: admin@realbunz.site
+          username: gsgnscap
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /domains/realbunz.site/public_html/
           protocol: ftp
