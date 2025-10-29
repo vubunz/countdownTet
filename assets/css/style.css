@@ -15,6 +15,86 @@ body {
   line-height: 1.6;
 }
 
+/* Header Styles */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 204, 0, 0.25);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 64px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.nav-item {
+  display: inline-flex;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 10px 18px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 204, 0, 0.25),
+    rgba(255, 204, 0, 0.15)
+  );
+  border: 1px solid rgba(255, 204, 0, 0.5);
+  border-radius: 10px;
+  color: #ffcc00;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255, 204, 0, 0.25);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 204, 0, 0.35),
+    rgba(255, 204, 0, 0.2)
+  );
+}
+
 /* Container to keep content centered and above video */
 .content {
   position: relative;
@@ -251,6 +331,21 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .header-inner {
+    flex-wrap: wrap;
+    gap: 12px;
+    min-height: 56px;
+  }
+
+  .brand-logo {
+    height: 40px;
+  }
+
+  .btn-primary {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
   h1 {
     font-size: 2rem;
   }
@@ -270,6 +365,19 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .header-inner {
+    padding: 10px 12px;
+  }
+
+  .brand-logo {
+    height: 36px;
+  }
+
+  .btn-primary {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+
   h1 {
     font-size: 1.8rem;
   }
