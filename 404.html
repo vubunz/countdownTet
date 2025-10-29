@@ -1,77 +1,50 @@
-<!--by Chat GPT-->
-<html>
-<head>
-    <title>404 Not Found</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Trang không tìm thấy | Đếm Ngược Tết 2026</title>
+    <meta
+      name="description"
+      content="Trang bạn tìm kiếm không tồn tại. Quay lại trang chủ để xem đếm ngược Tết 2026."
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f1f1f1;
-        }
-
-        .maintenance-container {
-            text-align: center;
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex; /* Thêm dòng này để sử dụng flexbox */
-            flex-direction: column; /* Hiển thị các phần tử theo chiều dọc */
-            align-items: center; /* Canh giữa các phần tử theo chiều ngang */
-        }
-
-        h1 {
-            color: #e44d26;
-            font-size: 2em;
-        }
-
-        p {
-            margin: 15px 0;
-            font-size: 1.2em;
-        }
-
-        @keyframes blink-red {
-            0%, 100% {
-                color: red;
-            }
-            50% {
-                color: transparent; 
-            }
-        }
-
-        @keyframes blink-black {
-            0%, 100% {
-                color: black;
-            }
-            50% {
-                color: transparent;
-            }
-        }
-
-        .blinking-red span {
-            animation: blink-red 1s infinite;
-        }
-
-        .blinking-black span {
-            animation: blink-black 1s infinite;
-        }
+      .error-container {
+        text-align: center;
+        padding: 50px 20px;
+      }
+      .error-code {
+        font-size: 8rem;
+        color: #ffcc00;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      .error-message {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+      }
+      .home-link {
+        display: inline-block;
+        background: #ffcc00;
+        color: #000;
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background 0.3s;
+      }
+      .home-link:hover {
+        background: #ffd700;
+      }
     </style>
-</head>
-<body>
-    <div class="maintenance-container">
-        <center><h1>404 Not Found</h1></center>
-        <center>Opps! Page not found.</center>
-    </br>
-        <center>
-            <span class="blinking-red"><span>Shitt! Trang bạn tìm kiếm đéo tồn tại:))</span></span>
-        </center>
+  </head>
+  <body>
+    <div class="error-container">
+      <div class="error-code">404</div>
+      <div class="error-message">Trang không tìm thấy</div>
+      <p>Xin lỗi, trang bạn tìm kiếm không tồn tại.</p>
+      <a href="/" class="home-link">Về trang chủ</a>
     </div>
-</body>
+  </body>
 </html>
