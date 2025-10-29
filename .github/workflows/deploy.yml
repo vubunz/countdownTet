@@ -18,10 +18,12 @@ jobs:
           username: admin@realbunz.site
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /domains/realbunz.site/public_html/
-          protocol: ftps
+          protocol: ftp
           exclude: |
             **/.git*
             **/.github/**
+            **/.git/**
+            **/.ftp-deploy-sync-state.json
             **/node_modules/**
             **/README.md
             **/LICENSE
