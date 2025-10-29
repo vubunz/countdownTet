@@ -35,7 +35,7 @@ if ($remain <= 0) {
         <div class="layout">
             <div class="main-col">
                 <main>
-                    <h1>ĐẾM NGƯỢC ĐẾN TẾT 2026 OKEY 🎆</h1>
+                    <h1>ĐẾM NGƯỢC ĐẾN TẾT 2026 OKEY ne cu 🎆</h1>
                     <h2>Tết Nguyên Đán 2026 rơi vào ngày 17 tháng 2 năm 2026 !</h2>
                     <div class="count-grid" aria-label="Đếm ngược theo đơn vị">
                         <div class="count-card">
