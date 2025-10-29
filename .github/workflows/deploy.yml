@@ -1,0 +1,27 @@
+name: Deploy to realbunz.site (DirectAdmin)
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ftp.realbunz.site
+          username: admin@realbunz.site
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /domains/realbunz.site/public_html/
+          protocol: ftps
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/node_modules/**
+            **/README.md
+            **/LICENSE
