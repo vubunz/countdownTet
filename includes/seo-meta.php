@@ -7,7 +7,7 @@ $site_keywords = "đếm ngược tết, countdown giao thừa, tết 2026, năm
 
 // Dùng đường dẫn tương đối để hiển thị icon/ảnh khi chạy local
 $og_image = "assets/images/og-image.jpg";
-$favicon = "assets/images/favicon.ico";
+$favicon = "assets/images/favilogo.jpg";
 ?>
 
 <!-- Primary Meta Tags -->
@@ -26,11 +26,9 @@ $favicon = "assets/images/favicon.ico";
 <?php endif; ?>
 
 <!-- Favicon (relative paths for local) -->
-<link rel="shortcut icon" href="<?php echo $favicon; ?>">
-<link rel="icon" type="image/x-icon" href="<?php echo $favicon; ?>">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+<link rel="shortcut icon" href="<?php echo $favicon; ?>" type="image/jpeg">
+<link rel="icon" href="<?php echo $favicon; ?>" type="image/jpeg">
+<link rel="apple-touch-icon" href="<?php echo $favicon; ?>">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
