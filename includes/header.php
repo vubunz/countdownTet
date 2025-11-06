@@ -22,7 +22,10 @@
             <nav class="nav" role="navigation" aria-label="Điều hướng chính">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href="#" class="btn-primary" id="tab-greeting-card">Gửi thiệp chúc tết</a>
+                        <a href="index.php" class="btn-primary">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="greeting-card.php" class="btn-primary">Tạo thiệp chúc tết</a>
                     </li>
                 </ul>
             </nav>
